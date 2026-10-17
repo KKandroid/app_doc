@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="小时候 App 隐私政策：了解孩子成长记录、媒体、备份及权限如何处理。">
-  <title>小时候 · 隐私政策 | Childhood Privacy Policy</title>
+  <title>小时候 · 隐私政策</title>
   <style>
-    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "PingFang SC", sans-serif; color: #302520; background: #fcf8f3; }
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "PingFang SC", "Noto Sans CJK TC", "Hiragino Sans", "Yu Gothic", "Malgun Gothic", sans-serif; color: #302520; background: #fcf8f3; }
     * { box-sizing: border-box; }
     body { margin: 0; line-height: 1.75; }
     header { background: #f5e8dd; border-bottom: 1px solid #e9d8cb; }
@@ -16,58 +16,363 @@
     p, li { font-size: 1rem; }
     p { margin: 0 0 14px; }
     ul { padding-left: 1.5em; }
-    .meta { color: #665a54; }
-    .switch { display: inline-block; margin-top: 12px; color: #a6453c; font-weight: 600; }
+    .meta { color: #665a54; margin-top: 8px; }
     a { color: #a6453c; }
     section { scroll-margin-top: 24px; }
     hr { border: 0; border-top: 1px solid #e5d8cf; margin: 44px 0; }
     footer { color: #665a54; border-top: 1px solid #e5d8cf; margin-top: 44px; }
+    .header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .header-top h1 { margin: 0; }
+    .lang-select { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; font-size: .95rem; color: #665a54; }
+    .lang-select label { font-weight: 600; white-space: nowrap; }
+    .lang-select select { font: inherit; padding: 6px 34px 6px 12px; border: 1px solid #e9d8cb; border-radius: 8px; background-color: #fff; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%23665a54' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 12px 12px; color: #302520; cursor: pointer; -webkit-appearance: none; appearance: none; }
   </style>
 </head>
 <body>
   <header><div class="wrap">
-    <h1>小时候 · 隐私政策</h1>
-    <p class="meta">运营者：康凯（个人开发者） · 联系邮箱：<a href="mailto:kanglechu@gmail.com">kanglechu@gmail.com</a><br>生效日期：2026 年 10 月 13 日</p>
-    <a class="switch" href="#english" lang="en">English version ↓</a>
+    <div class="header-top">
+      <h1 id="title">小时候 · 隐私政策</h1>
+      <div class="lang-select">
+        <label for="langSelect" id="langLabel">语言</label>
+        <select id="langSelect" aria-label="选择语言"></select>
+      </div>
+    </div>
+    <p class="meta" id="meta"></p>
   </div></header>
   <main class="wrap">
-    <section aria-label="中文版">
-      <p>“小时候”供家长和照护者记录孩子的成长时刻、成长测量、事件与日程。应用主要将您录入的孩子资料、照片、视频和记录保存在当前设备的应用私有空间。当前版本不提供账号登录或自动云同步，也不会将这些资料自动上传到我们的服务器。</p>
-      <h2>我们如何处理资料</h2>
-      <ul>
-        <li>孩子档案、媒体和记录保存在设备本机；非敏感设置保存在本机偏好中，购买资格保存在本机。应用数据库本身未独立加密，应用锁不是全部资料的独立加密。</li>
-        <li>您主动选择或拍摄照片、视频时，应用取得所选内容并保存应用副本。Android 使用系统照片选择器，只访问您选中的媒体；iOS 使用相册选择功能。原相册内容与应用副本分别管理。</li>
-        <li>您主动生成资料包时，应用用您设置的密码加密资料包，再交给系统文件保存界面。我们不保存或找回备份密码。若您保存到云盘或发送给他人，目标服务按其规则处理外部副本。</li>
-        <li>您主动分享媒体时，应用准备分享副本并交给系统分享界面。接收应用或服务可能保存该副本；在应用内删除记录无法撤回已分享的内容。</li>
-        <li>您开启日程提醒时，应用向设备通知系统登记提醒。您选择写入系统日历时，事项内容、时间及您选择包含的孩子称呼会写入日历；日历账号可能同步这些信息。</li>
-        <li>您购买或恢复一次性解锁时，支付由 Google Play 或 Apple App Store 处理。应用接收商品和交易状态，不接收银行卡资料。</li>
-        <li>当前版本初始化 Firebase Core，未启用 Firebase 云数据库、云存储、分析或崩溃收集。SDK 可能处理必要的技术性设备或安装信息；我们会依据最终发布版本核对并保持商店数据安全申报一致。</li>
-      </ul>
-      <h2>权限</h2>
-      <p>相机和麦克风用于拍摄；iOS 相册权限用于选择媒体；Android 系统照片选择器无需授予整个相册读取权限。通知用于您开启的提醒；日历用于您主动选择写入的事项；系统生物识别用于您开启的应用锁。应用不读取或保存指纹、面容模板。相关权限可在系统设置中管理。</p>
-      <h2>保存、删除与安全</h2>
-      <p>资料保留在本机，直到您删除相应内容或卸载应用。普通记录与孩子档案进入回收站后通常可在 30 天内恢复，也可提前永久删除。设备系统备份和您另存的资料包可能保留其他副本，不会因应用内删除而自动消失。我们使用系统应用沙盒保存文件；带密码的资料包使用认证加密。请妥善保管设备和资料包密码。</p>
-      <h2>儿童资料</h2>
-      <p>本应用面向家长和照护者使用，不面向儿童自行注册或使用。请仅录入您有权管理的孩子资料，并在分享照片、视频或资料包前确认接收对象和分享范围。</p>
-      <h2>联系与变更</h2>
-      <p>若您对资料处理、删除或本政策有疑问，请发送邮件至 <a href="mailto:kanglechu@gmail.com">kanglechu@gmail.com</a>。如果今后增加账号、云同步、分析或其他改变数据处理范围的服务，我们会在启用前更新本政策和商店申报。</p>
-    </section>
-    <hr>
-    <section id="english" lang="en" aria-label="English version">
-      <h1>Childhood · Privacy Policy</h1>
-      <p class="meta">Operator: Kang Kai (康凯), individual developer · Contact: <a href="mailto:kanglechu@gmail.com">kanglechu@gmail.com</a><br>Effective: October 13, 2026</p>
-      <p>Childhood helps parents and caregivers keep child profiles, photos, videos, growth measurements, events, and schedules. These records are primarily stored in the app's private storage on your device. The current version has no account sign-in or automatic cloud sync and does not automatically upload these records to our servers.</p>
-      <h2>How data is handled</h2>
-      <p>You choose when to select or capture media; the app keeps its own copy. Android uses the system Photo Picker to access only selected items. You may export a password-encrypted backup; we cannot recover its password. Content you choose to share, save to a cloud provider, or add to a device calendar may be retained or synced by that destination. Deleting an in-app record does not remove external copies. Google Play or the App Store processes purchases; the app receives product and transaction status but no payment-card details.</p>
-      <p>The app initializes Firebase Core but currently does not use Firebase cloud database, cloud storage, analytics, or crash collection. The SDK may process technical device or installation information. We reconcile this with the final release and store data disclosures.</p>
-      <h2>Permissions</h2>
-      <p>Camera and microphone support capture; iOS photo-library access supports selection. Android's system Photo Picker does not require broad library access. Notifications support reminders you enable, calendar access supports entries you choose to add, and device biometrics support the optional app lock. We do not receive biometric templates. You can manage permissions in device settings.</p>
-      <h2>Retention, deletion, and security</h2>
-      <p>Records stay on your device until you delete them or uninstall the app. Trash is normally recoverable for 30 days unless emptied sooner. Device backups, exported archives, and shared copies are separate and are not removed by deleting an in-app record. The app uses the operating system's app sandbox, and password-protected archives use authenticated encryption. The local database is not independently encrypted.</p>
-      <h2>Children and contact</h2>
-      <p>This app is for parents and caregivers, not for children to create accounts. Only add child information that you are authorized to manage, and check the destination before sharing it. For questions about data or deletion, contact <a href="mailto:kanglechu@gmail.com">kanglechu@gmail.com</a>. We will update this policy and the store disclosures before enabling a future account, cloud sync, analytics, or other material change.</p>
-    </section>
+    <div id="content"></div>
   </main>
-  <footer><div class="wrap">© 2026 小时候 · Childhood</div></footer>
+  <footer><div class="wrap" id="footer">© 2026 小时候 · Childhood</div></footer>
+
+  <script>
+    const LANGS = [
+      ['zh-CN', '简体中文'],
+      ['zh-TW', '繁體中文'],
+      ['en',   'English'],
+      ['es',   'Español'],
+      ['fr',   'Français'],
+      ['pt',   'Português'],
+      ['ru',   'Русский'],
+      ['ja',   '日本語'],
+      ['ko',   '한국어'],
+      ['id',   'Bahasa Indonesia'],
+      ['de',   'Deutsch']
+    ];
+
+    const EMAIL = 'kanglechu@gmail.com';
+
+    const T = {
+      'zh-CN': {
+        html: 'zh-CN',
+        title: '小时候 · 隐私政策',
+        desc: '小时候 App 隐私政策：了解孩子成长记录、媒体、备份及权限如何处理。',
+        h1: '小时候 · 隐私政策',
+        meta: '运营者：康凯（个人开发者） · 联系邮箱：<a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · 生效日期：2026 年 10 月 13 日',
+        intro: '“小时候”供家长和照护者记录孩子的成长时刻、成长测量、事件与日程。应用主要将您录入的孩子资料、照片、视频和记录保存在当前设备的应用私有空间。当前版本不提供账号登录或自动云同步，也不会将这些资料自动上传到我们的服务器。',
+        sections: [
+          { type: 'list', h: '我们如何处理资料', items: [
+            '孩子档案、媒体和记录保存在设备本机；非敏感设置保存在本机偏好中，购买资格保存在本机。应用数据库本身未独立加密，应用锁不是全部资料的独立加密。',
+            '您主动选择或拍摄照片、视频时，应用取得所选内容并保存应用副本。Android 使用系统照片选择器，只访问您选中的媒体；iOS 使用相册选择功能。原相册内容与应用副本分别管理。',
+            '您主动生成资料包时，应用用您设置的密码加密资料包，再交给系统文件保存界面。我们不保存或找回备份密码。若您保存到云盘或发送给他人，目标服务按其规则处理外部副本。',
+            '您主动分享媒体时，应用准备分享副本并交给系统分享界面。接收应用或服务可能保存该副本；在应用内删除记录无法撤回已分享的内容。',
+            '您开启日程提醒时，应用向设备通知系统登记提醒。您选择写入系统日历时，事项内容、时间及您选择包含的孩子称呼会写入日历；日历账号可能同步这些信息。',
+            '您购买或恢复一次性解锁时，支付由 Google Play 或 Apple App Store 处理。应用接收商品和交易状态，不接收银行卡资料。',
+            '当前版本初始化 Firebase Core，未启用 Firebase 云数据库、云存储、分析或崩溃收集。SDK 可能处理必要的技术性设备或安装信息；我们会依据最终发布版本核对并保持商店数据安全申报一致。'
+          ] },
+          { type: 'text', h: '权限', p: '相机和麦克风用于拍摄；iOS 相册权限用于选择媒体；Android 系统照片选择器无需授予整个相册读取权限。通知用于您开启的提醒；日历用于您主动选择写入的事项；系统生物识别用于您开启的应用锁。应用不读取或保存指纹、面容模板。相关权限可在系统设置中管理。' },
+          { type: 'text', h: '保存、删除与安全', p: '资料保留在本机，直到您删除相应内容或卸载应用。普通记录与孩子档案进入回收站后通常可在 30 天内恢复，也可提前永久删除。设备系统备份和您另存的资料包可能保留其他副本，不会因应用内删除而自动消失。我们使用系统应用沙盒保存文件；带密码的资料包使用认证加密。请妥善保管设备和资料包密码。' },
+          { type: 'text', h: '儿童资料', p: '本应用面向家长和照护者使用，不面向儿童自行注册或使用。请仅录入您有权管理的孩子资料，并在分享照片、视频或资料包前确认接收对象和分享范围。' },
+          { type: 'text', h: '联系与变更', p: '若您对资料处理、删除或本政策有疑问，请发送邮件至 <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>。如果今后增加账号、云同步、分析或其他改变数据处理范围的服务，我们会在启用前更新本政策和商店申报。' }
+        ]
+      },
+      'zh-TW': {
+        html: 'zh-Hant',
+        title: '小時候 · 隱私政策',
+        desc: '小時候 App 隱私政策：了解孩子成長記錄、媒體、備份及權限如何處理。',
+        h1: '小時候 · 隱私政策',
+        meta: '營運者：康凱（個人開發者） · 聯絡信箱：<a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · 生效日期：2026 年 10 月 13 日',
+        intro: '「小時候」供家長和照護者記錄孩子的成長時刻、成長測量、事件與日程。應用程式主要將您輸入的孩子資料、照片、影片和紀錄儲存於目前裝置的應用程式私有空間。目前版本不提供帳號登入或自動雲端同步，也不會將這些資料自動上傳到我們的伺服器。',
+        sections: [
+          { type: 'list', h: '我們如何處理資料', items: [
+            '孩子檔案、媒體和紀錄儲存於裝置本機；非敏感設定儲存於本機偏好中，購買資格儲存於本機。應用程式資料庫本身未獨立加密，應用程式鎖定並非全部資料的獨立加密。',
+            '您主動選擇或拍攝照片、影片時，應用程式取得所選內容並儲存應用程式副本。Android 使用系統相片選擇器，只存取您選取的媒體；iOS 使用相簿選擇功能。原始相簿內容與應用程式副本分開管理。',
+            '您主動產生資料包時，應用程式以您設定的密碼加密資料包，再交由系統檔案儲存介面。我們不儲存或找回備份密碼。若您儲存到雲端硬碟或傳送給他人，目標服務依其規則處理外部副本。',
+            '您主動分享媒體時，應用程式準備分享副本並交由系統分享介面。接收應用程式或服務可能儲存該副本；在應用程式內刪除紀錄無法撤回已分享的內容。',
+            '您開啟日程提醒時，應用程式向裝置通知系統登記提醒。您選擇寫入系統日曆時，事項內容、時間及您選擇包含的孩子稱呼會寫入日曆；日曆帳號可能同步這些資訊。',
+            '您購買或復原一次性解鎖時，付款由 Google Play 或 Apple App Store 處理。應用程式接收商品和交易狀態，不接收銀行卡資料。',
+            '目前版本初始化 Firebase Core，未啟用 Firebase 雲端資料庫、雲端儲存、分析或當機收集。SDK 可能處理必要的技術性裝置或安裝資訊；我們會依據最終發佈版本核對並保持商店資料安全申報一致。'
+          ] },
+          { type: 'text', h: '權限', p: '相機和麥克風用於拍攝；iOS 相簿權限用於選擇媒體；Android 系統相片選擇器無須授予整個相簿讀取權限。通知用於您開啟的提醒；日曆用於您主動選擇寫入的事項；系統生物辨識用於您開啟的應用程式鎖定。應用程式不讀取或儲存指紋、臉部模板。相關權限可在系統設定中管理。' },
+          { type: 'text', h: '儲存、刪除與安全', p: '資料保留在本機，直到您刪除相應內容或解除安裝應用程式。一般紀錄與孩子檔案進入資源回收筒後通常可在 30 天內復原，也可提前永久刪除。裝置系統備份和您另存的資料包可能保留其他副本，不會因應用程式內刪除而自動消失。我們使用系統應用程式沙箱儲存檔件；帶密碼的資料包使用認證加密。請妥善保管裝置和資料包密碼。' },
+          { type: 'text', h: '兒童資料', p: '本應用程式面向家長和照護者使用，不面向兒童自行註冊或使用。請僅輸入您有權管理的孩子資料，並在分享照片、影片或資料包前確認接收對象和分享範圍。' },
+          { type: 'text', h: '聯絡與變更', p: '若您對資料處理、刪除或本政策有疑問，請寄送電子郵件至 <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>。如果今後增加帳號、雲端同步、分析或其他改變資料處理範圍的服務，我們會在啟用前更新本政策和商店申報。' }
+        ]
+      },
+      'en': {
+        html: 'en',
+        title: 'Childhood · Privacy Policy',
+        desc: 'Childhood app privacy policy: how child growth records, media, backups, and permissions are handled.',
+        h1: 'Childhood · Privacy Policy',
+        meta: 'Operator: Kang Kai (individual developer) · Contact: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Effective: October 13, 2026',
+        intro: 'Childhood helps parents and caregivers record children’s growth moments, growth measurements, events, and schedules. The app primarily stores the child profiles, photos, videos, and records you enter in the app’s private storage on your current device. The current version has no account sign-in or automatic cloud sync and does not automatically upload these records to our servers.',
+        sections: [
+          { type: 'list', h: 'How data is handled', items: [
+            'Child profiles, media, and records are stored locally on your device; non-sensitive settings are kept in local preferences and purchase entitlements are kept locally. The app database itself is not independently encrypted, and the app lock is not independent encryption of all data.',
+            'When you actively choose or capture photos and videos, the app obtains the selected content and saves its own copy. Android uses the system Photo Picker to access only the media you select; iOS uses the photo-library picker. Your original photo library and the app’s copies are managed separately.',
+            'When you actively generate an export archive, the app encrypts it with the password you set and then hands it to the system file-save interface. We do not store or recover the backup password. If you save it to a cloud drive or send it to someone, the destination service handles the external copy according to its rules.',
+            'When you actively share media, the app prepares a share copy and hands it to the system share interface. The receiving app or service may keep that copy; deleting a record in the app cannot retract content you have already shared.',
+            'When you enable schedule reminders, the app registers the reminder with the device notification system. When you choose to write to the system calendar, the event content, time, and the child’s name you choose to include are written to the calendar; the calendar account may sync this information.',
+            'When you purchase or restore a one-time unlock, payment is processed by Google Play or the Apple App Store. The app receives product and transaction status but no payment-card details.',
+            'The current version initializes Firebase Core but does not enable Firebase cloud database, cloud storage, analytics, or crash collection. The SDK may process necessary technical device or installation information; we reconcile this with the final release and keep store data-safety disclosures consistent.'
+          ] },
+          { type: 'text', h: 'Permissions', p: 'Camera and microphone support capture; iOS photo-library access supports selecting media; Android’s system Photo Picker does not require broad library access. Notifications support reminders you enable, calendar access supports entries you choose to add, and device biometrics support the optional app lock. We do not read or store fingerprint or face templates. You can manage these permissions in device settings.' },
+          { type: 'text', h: 'Retention, deletion, and security', p: 'Records stay on your device until you delete them or uninstall the app. Normal records and child profiles can usually be recovered within 30 days after entering the trash, and can also be permanently deleted earlier. Device system backups and the export archives you save separately may retain other copies and will not automatically disappear because of an in-app deletion. We use the operating system’s app sandbox to store files; password-protected archives use authenticated encryption. Please keep your device and archive passwords safe.' },
+          { type: 'text', h: "Children's data", p: 'This app is for parents and caregivers, not for children to register or use on their own. Only add child information you are authorized to manage, and confirm the recipient and scope before sharing photos, videos, or archives.' },
+          { type: 'text', h: 'Contact and changes', p: 'If you have questions about data handling, deletion, or this policy, please email <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. If we later add accounts, cloud sync, analytics, or other services that change the scope of data processing, we will update this policy and the store disclosures before enabling them.' }
+        ]
+      },
+      'es': {
+        html: 'es',
+        title: 'Childhood · Política de privacidad',
+        desc: 'Política de privacidad de la app Childhood: cómo se tratan los registros de crecimiento, medios, copias de seguridad y permisos.',
+        h1: 'Childhood · Política de privacidad',
+        meta: 'Operador: Kang Kai (desarrollador individual) · Contacto: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Vigencia: 13 de octubre de 2026',
+        intro: 'Childhood ayuda a los padres y cuidadores a registrar los momentos de crecimiento de los niños, mediciones de crecimiento, eventos y horarios. La aplicación almacena principalmente los perfiles de los niños, fotos, vídeos y registros que introduce en el almacenamiento privado de la aplicación en su dispositivo actual. La versión actual no ofrece inicio de sesión con cuenta ni sincronización automática en la nube, y no carga automáticamente estos registros en nuestros servidores.',
+        sections: [
+          { type: 'list', h: 'Cómo se tratan los datos', items: [
+            'Los perfiles de los niños, los medios y los registros se almacenan localmente en su dispositivo; la configuración no sensible se guarda en las preferencias locales y los derechos de compra se guardan localmente. La base de datos de la aplicación en sí no está cifrada de forma independiente, y el bloqueo de la aplicación no es un cifrado independiente de todos los datos.',
+            'Cuando usted elige o captura activamente fotos y vídeos, la aplicación obtiene el contenido seleccionado y guarda su propia copia. Android usa el selector de fotos del sistema para acceder solo a los medios que selecciona; iOS usa el selector de la biblioteca de fotos. Su biblioteca de fotos original y las copias de la aplicación se gestionan por separado.',
+            'Cuando usted genera activamente un archivo de exportación, la aplicación lo cifra con la contraseña que establece y luego lo entrega a la interfaz de guardado de archivos del sistema. No almacenamos ni recuperamos la contraseña de la copia de seguridad. Si lo guarda en una unidad en la nube o lo envía a otra persona, el servicio de destino maneja la copia externa según sus reglas.',
+            'Cuando usted comparte medios activamente, la aplicación prepara una copia para compartir y la entrega a la interfaz de uso compartido del sistema. La aplicación o el servicio receptor pueden conservar esa copia; eliminar un registro en la aplicación no puede retractar el contenido que ya ha compartido.',
+            'Cuando usted activa los recordatorios de horarios, la aplicación registra el recordatorio en el sistema de notificaciones del dispositivo. Cuando elige escribir en el calendario del sistema, el contenido del evento, la hora y el nombre del niño que elige incluir se escriben en el calendario; la cuenta del calendario puede sincronizar esta información.',
+            'Cuando usted compra o restaura un desbloqueo único, el pago lo procesan Google Play o la Apple App Store. La aplicación recibe el estado del producto y de la transacción, pero no los datos de la tarjeta de pago.',
+            'La versión actual inicializa Firebase Core pero no activa la base de datos en la nube de Firebase, el almacenamiento en la nube, el análisis ni la recopilación de fallos. El SDK puede procesar información técnica necesaria del dispositivo o de la instalación; conciliamos esto con la versión final y mantenemos coherentes las declaraciones de seguridad de datos de la tienda.'
+          ] },
+          { type: 'text', h: 'Permisos', p: 'La cámara y el micrófono permiten la captura; el acceso a la biblioteca de fotos de iOS permite seleccionar medios; el selector de fotos del sistema de Android no requiere acceso amplio a la biblioteca. Las notificaciones admiten los recordatorios que activa, el acceso al calendario admite las entradas que elige agregar, y la biometría del dispositivo admite el bloqueo opcional de la aplicación. No leemos ni almacenamos plantillas de huellas dactilares o faciales. Puede gestionar estos permisos en la configuración del dispositivo.' },
+          { type: 'text', h: 'Conservación, eliminación y seguridad', p: 'Los registros permanecen en su dispositivo hasta que los elimina o desinstala la aplicación. Los registros normales y los perfiles de los niños suelen poder recuperarse dentro de los 30 días posteriores a su envío a la papelera, y también pueden eliminarse de forma permanente antes. Las copias de seguridad del sistema del dispositivo y los archivos de exportación que guarda por separado pueden conservar otras copias y no desaparecen automáticamente por una eliminación dentro de la aplicación. Usamos el sandbox de la aplicación del sistema operativo para almacenar archivos; los archivos protegidos con contraseña usan cifrado autenticado. Por favor, guarde de forma segura las contraseñas de su dispositivo y de sus archivos.' },
+          { type: 'text', h: 'Datos de menores', p: 'Esta aplicación está dirigida a padres y cuidadores, no a niños que se registren o la usen por sí mismos. Agregue únicamente información de niños que esté autorizado a gestionar, y confirme el destinatario y el alcance antes de compartir fotos, vídeos o archivos.' },
+          { type: 'text', h: 'Contacto y cambios', p: 'Si tiene preguntas sobre el tratamiento de datos, la eliminación o esta política, envíe un correo electrónico a <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Si en el futuro agregamos cuentas, sincronización en la nube, análisis u otros servicios que cambien el alcance del tratamiento de datos, actualizaremos esta política y las declaraciones de la tienda antes de activarlos.' }
+        ]
+      },
+      'fr': {
+        html: 'fr',
+        title: 'Childhood · Politique de confidentialité',
+        desc: 'Politique de confidentialité de l’application Childhood : comment sont traités les registres de croissance, les médias, les sauvegardes et les autorisations.',
+        h1: 'Childhood · Politique de confidentialité',
+        meta: 'Opérateur : Kang Kai (développeur individuel) · Contact : <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Entrée en vigueur : 13 octobre 2026',
+        intro: 'Childhood aide les parents et les aidants à consigner les moments de croissance des enfants, les mesures de croissance, les événements et les plannings. L’application stocke principalement les profils d’enfants, les photos, les vidéos et les enregistrements que vous saisissez dans le stockage privé de l’application sur votre appareil actuel. La version actuelle ne propose pas de connexion par compte ni de synchronisation automatique dans le cloud, et ne téléverse pas automatiquement ces enregistrements sur nos serveurs.',
+        sections: [
+          { type: 'list', h: 'Comment vos données sont traitées', items: [
+            'Les profils d’enfants, les médias et les enregistrements sont stockés localement sur votre appareil ; les paramètres non sensibles sont conservés dans les préférences locales et les droits d’achat sont conservés localement. La base de données de l’application n’est pas chiffrée indépendamment, et le verrouillage de l’application n’est pas un chiffrement indépendant de toutes les données.',
+            'Lorsque vous choisissez ou capturez activement des photos et des vidéos, l’application obtient le contenu sélectionné et enregistre sa propre copie. Android utilise le sélecteur de photos du système pour accéder uniquement aux médias que vous sélectionnez ; iOS utilise le sélecteur de la photothèque. Votre photothèque d’origine et les copies de l’application sont gérées séparément.',
+            'Lorsque vous générez activement une archive d’exportation, l’application la chiffre avec le mot de passe que vous définissez, puis la confie à l’interface d’enregistrement de fichiers du système. Nous ne stockons ni ne récupérons le mot de passe de sauvegarde. Si vous l’enregistrez sur un disque cloud ou l’envoyez à quelqu’un, le service de destination traite la copie externe selon ses règles.',
+            'Lorsque vous partagez activement des médias, l’application prépare une copie de partage et la confie à l’interface de partage du système. L’application ou le service destinataire peut conserver cette copie ; la suppression d’un enregistrement dans l’application ne peut pas annuler le contenu que vous avez déjà partagé.',
+            'Lorsque vous activez les rappels de planning, l’application enregistre le rappel auprès du système de notification de l’appareil. Lorsque vous choisissez d’écrire dans le calendrier système, le contenu de l’événement, l’heure et le prénom de l’enfant que vous choisissez d’inclure sont écrits dans le calendrier ; le compte de calendrier peut synchroniser ces informations.',
+            'Lorsque vous achetez ou restaurez un déverrouillage unique, le paiement est traité par Google Play ou l’Apple App Store. L’application reçoit l’état du produit et de la transaction, mais aucune donnée de carte bancaire.',
+            'La version actuelle initialise Firebase Core mais n’active pas la base de données cloud Firebase, le stockage cloud, l’analyse ni la collecte de plantages. Le SDK peut traiter des informations techniques nécessaires sur l’appareil ou l’installation ; nous concilions cela avec la version finale et maintenons cohérentes les déclarations de sécurité des données de la boutique.'
+          ] },
+          { type: 'text', h: 'Autorisations', p: 'L’appareil photo et le microphone permettent la capture ; l’accès à la photothèque iOS permet de sélectionner des médias ; le sélecteur de photos du système Android ne nécessite pas un accès large à la bibliothèque. Les notifications prennent en charge les rappels que vous activez, l’accès au calendrier prend en charge les entrées que vous choisissez d’ajouter, et la biométrie de l’appareil prend en charge le verrouillage optionnel de l’application. Nous ne lisons ni ne stockons de modèles d’empreintes digitales ou faciales. Vous pouvez gérer ces autorisations dans les paramètres de l’appareil.' },
+          { type: 'text', h: 'Conservation, suppression et sécurité', p: 'Les enregistrements restent sur votre appareil jusqu’à ce que vous les supprimiez ou désinstalliez l’application. Les enregistrements normaux et les profils d’enfants peuvent généralement être récupérés dans les 30 jours suivant leur mise à la corbeille, et peuvent également être supprimés définitivement plus tôt. Les sauvegardes système de l’appareil et les archives d’exportation que vous enregistrez séparément peuvent conserver d’autres copies et ne disparaissent pas automatiquement en raison d’une suppression dans l’application. Nous utilisons le bac à sable de l’application du système d’exploitation pour stocker les fichiers ; les archives protégées par mot de passe utilisent un chiffrement authentifié. Veuillez conserver en sécurité les mots de passe de votre appareil et de vos archives.' },
+          { type: 'text', h: 'Données des enfants', p: 'Cette application s’adresse aux parents et aux aidants, et non aux enfants qui s’inscriraient ou l’utiliseraient seuls. N’ajoutez que les informations d’enfants que vous êtes autorisé à gérer, et confirmez le destinataire et la portée avant de partager des photos, des vidéos ou des archives.' },
+          { type: 'text', h: 'Contact et modifications', p: 'Si vous avez des questions sur le traitement des données, la suppression ou cette politique, veuillez envoyer un e-mail à <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Si nous ajoutons à l’avenir des comptes, une synchronisation cloud, des analyses ou d’autres services modifiant la portée du traitement des données, nous mettrons à jour cette politique et les déclarations de la boutique avant de les activer.' }
+        ]
+      },
+      'pt': {
+        html: 'pt',
+        title: 'Childhood · Política de Privacidade',
+        desc: 'Política de privacidade do app Childhood: como os registros de crescimento, mídias, backups e permissões são tratados.',
+        h1: 'Childhood · Política de Privacidade',
+        meta: 'Operador: Kang Kai (desenvolvedor individual) · Contato: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Vigência: 13 de outubro de 2026',
+        intro: 'O Childhood ajuda pais e cuidadores a registrar os momentos de crescimento das crianças, medidas de crescimento, eventos e agendas. O aplicativo armazena principalmente os perfis das crianças, fotos, vídeos e registros que você insere no armazenamento privado do aplicativo no seu dispositivo atual. A versão atual não oferece login de conta nem sincronização automática em nuvem e não envia automaticamente esses registros para nossos servidores.',
+        sections: [
+          { type: 'list', h: 'Como os dados são tratados', items: [
+            'Os perfis das crianças, as mídias e os registros são armazenados localmente no seu dispositivo; as configurações não sensíveis são mantidas nas preferências locais e os direitos de compra são mantidos localmente. O banco de dados do aplicativo em si não é criptografado de forma independente, e o bloqueio do aplicativo não é uma criptografia independente de todos os dados.',
+            'Quando você escolhe ou captura ativamente fotos e vídeos, o aplicativo obtém o conteúdo selecionado e salva sua própria cópia. O Android usa o seletor de fotos do sistema para acessar apenas as mídias que você seleciona; o iOS usa o seletor da biblioteca de fotos. Sua biblioteca de fotos original e as cópias do aplicativo são gerenciadas separadamente.',
+            'Quando você gera ativamente um pacote de exportação, o aplicativo o criptografa com a senha que você define e então o entrega à interface de salvamento de arquivos do sistema. Não armazenamos nem recuperamos a senha de backup. Se você o salvar em uma unidade na nuvem ou enviá-lo a outra pessoa, o serviço de destino trata a cópia externa de acordo com suas regras.',
+            'Quando você compartilha ativamente mídias, o aplicativo prepara uma cópia de compartilhamento e a entrega à interface de compartilhamento do sistema. O aplicativo ou serviço receptor pode manter essa cópia; excluir um registro no aplicativo não pode desfazer o conteúdo que você já compartilhou.',
+            'Quando você ativa os lembretes de agenda, o aplicativo registra o lembrete no sistema de notificações do dispositivo. Quando você escolhe gravar no calendário do sistema, o conteúdo do evento, a hora e o nome da criança que você escolhe incluir são gravados no calendário; a conta do calendário pode sincronizar essas informações.',
+            'Quando você compra ou restaura um desbloqueio único, o pagamento é processado pelo Google Play ou pela Apple App Store. O aplicativo recebe o status do produto e da transação, mas nenhum dado de cartão de pagamento.',
+            'A versão atual inicializa o Firebase Core, mas não ativa o banco de dados em nuvem do Firebase, o armazenamento em nuvem, a análise nem a coleta de falhas. O SDK pode processar informações técnicas necessárias do dispositivo ou da instalação; reconciliamos isso com a versão final e mantemos consistentes as declarações de segurança de dados da loja.'
+          ] },
+          { type: 'text', h: 'Permissões', p: 'A câmera e o microfone permitem a captura; o acesso à biblioteca de fotos do iOS permite selecionar mídias; o seletor de fotos do sistema do Android não exige acesso amplo à biblioteca. As notificações suportam os lembretes que você ativa, o acesso ao calendário suporta as entradas que você escolhe adicionar, e a biometria do dispositivo suporta o bloqueio opcional do aplicativo. Não lemos nem armazenamos modelos de impressões digitais ou faciais. Você pode gerenciar essas permissões nas configurações do dispositivo.' },
+          { type: 'text', h: 'Retenção, exclusão e segurança', p: 'Os registros permanecem no seu dispositivo até que você os exclua ou desinstale o aplicativo. Registros normais e perfis de crianças geralmente podem ser recuperados dentro de 30 dias após entrarem na lixeira, e também podem ser excluídos permanentemente antes. Backups do sistema do dispositivo e os pacotes de exportação que você salva separadamente podem reter outras cópias e não desaparecem automaticamente devido a uma exclusão no aplicativo. Usamos o sandbox do aplicativo do sistema operacional para armazenar arquivos; pacotes protegidos por senha usam criptografia autenticada. Por favor, guarde com segurança as senhas do seu dispositivo e dos seus pacotes.' },
+          { type: 'text', h: 'Dados de crianças', p: 'Este aplicativo é destinado a pais e cuidadores, não a crianças que se registrem ou o utilizem por conta própria. Adicione apenas informações de crianças que você esteja autorizado a gerenciar, e confirme o destinatário e o alcance antes de compartilhar fotos, vídeos ou pacotes.' },
+          { type: 'text', h: 'Contato e alterações', p: 'Se você tiver dúvidas sobre o tratamento de dados, a exclusão ou esta política, envie um e-mail para <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Se no futuro adicionarmos contas, sincronização em nuvem, análises ou outros serviços que alterem o escopo do tratamento de dados, atualizaremos esta política e as declarações da loja antes de ativá-los.' }
+        ]
+      },
+      'ru': {
+        html: 'ru',
+        title: 'Childhood · Политика конфиденциальности',
+        desc: 'Политика конфиденциальности приложения Childhood: как обрабатываются записи о росте детей, медиафайлы, резервные копии и разрешения.',
+        h1: 'Childhood · Политика конфиденциальности',
+        meta: 'Оператор: Kang Kai (частный разработчик) · Контакт: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Вступает в силу: 13 октября 2026 г.',
+        intro: 'Childhood помогает родителям и опекунам записывать моменты роста детей, измерения роста, события и расписания. Приложение в основном сохраняет профили детей, фотографии, видео и записи, которые вы вводите, в частном хранилище приложения на вашем текущем устройстве. Текущая версия не предоставляет входа в учётную запись или автоматической синхронизации в облаке и не загружает эти записи на наши серверы автоматически.',
+        sections: [
+          { type: 'list', h: 'Как мы обрабатываем данные', items: [
+            'Профили детей, медиафайлы и записи хранятся локально на вашем устройстве; нечувствительные настройки сохраняются в локальных предпочтениях, а права на покупки — локально. Сама база данных приложения не зашифрована отдельно, а блокировка приложения не является отдельным шифрованием всех данных.',
+            'Когда вы активно выбираете или делаете фотографии и видео, приложение получает выбранное содержимое и сохраняет свою копию. Android использует системный выборщик фотографий для доступа только к выбранным медиафайлам; iOS использует выборщик фотобиблиотеки. Ваша исходная фотобиблиотека и копии приложения управляются отдельно.',
+            'Когда вы активно создаёте пакет экспорта, приложение шифрует его паролем, который вы задали, и затем передаёт системному интерфейсу сохранения файлов. Мы не сохраняем и не восстанавливаем пароль резервной копии. Если вы сохраните его в облачное хранилище или отправите другому лицу, целевой сервис обрабатывает внешнюю копию по своим правилам.',
+            'Когда вы активно делитесь медиафайлами, приложение готовит копию для общего доступа и передаёт её системному интерфейсу общего доступа. Принимающее приложение или сервис могут сохранить эту копию; удаление записи в приложении не может отозвать уже опубликованное вами содержимое.',
+            'Когда вы включаете напоминания о расписании, приложение регистрирует напоминание в системе уведомлений устройства. Когда вы выбираете запись в системный календарь, содержимое события, время и имя ребёнка, которое вы решили включить, записываются в календарь; учётная запись календаря может синхронизировать эту информацию.',
+            'Когда вы покупаете или восстанавливаете одноразовую разблокировку, платёж обрабатывается Google Play или Apple App Store. Приложение получает статус товара и транзакции, но не данные банковской карты.',
+            'Текущая версия инициализирует Firebase Core, но не включает облачную базу данных Firebase, облачное хранилище, аналитику или сбор сбоев. SDK может обрабатывать необходимую техническую информацию об устройстве или установке; мы сверяем это с финальной версией и поддерживаем согласованность заявлений о безопасности данных в магазине.'
+          ] },
+          { type: 'text', h: 'Разрешения', p: 'Камера и микрофон используются для съёмки; доступ к фотобиблиотеке iOS используется для выбора медиафайлов; системный выборщик фотографий Android не требует широкого доступа к библиотеке. Уведомления поддерживают включённые вами напоминания, доступ к календарю поддерживает записи, которые вы решаете добавить, а биометрия устройства поддерживает необязательную блокировку приложения. Мы не считываем и не сохраняем шаблоны отпечатков пальцев или лица. Эти разрешения можно управлять в настройках устройства.' },
+          { type: 'text', h: 'Хранение, удаление и безопасность', p: 'Записи остаются на вашем устройстве, пока вы их не удалите или не удалите приложение. Обычные записи и профили детей обычно можно восстановить в течение 30 дней после попадания в корзину, а также можно удалить навсегда раньше. Системные резервные копии устройства и пакеты экспорта, которые вы сохраняете отдельно, могут содержать другие копии и не исчезают автоматически при удалении в приложении. Мы используем песочницу приложения операционной системы для хранения файлов; пакеты с паролем используют аутентифицированное шифрование. Пожалуйста, бережно храните пароли устройства и пакетов.' },
+          { type: 'text', h: 'Данные детей', p: 'Это приложение предназначено для родителей и опекунов, а не для детей, которые регистрируются или пользуются им самостоятельно. Добавляйте только те данные о детях, которыми вы уполномочены управлять, и подтверждайте получателя и объём перед тем, как делиться фотографиями, видео или пакетами.' },
+          { type: 'text', h: 'Контакт и изменения', p: 'Если у вас есть вопросы об обработке данных, удалении или этой политике, отправьте письмо на <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Если в будущем мы добавим учётные записи, облачную синхронизацию, аналитику или другие сервисы, меняющие объём обработки данных, мы обновим эту политику и заявления магазина перед их включением.' }
+        ]
+      },
+      'ja': {
+        html: 'ja',
+        title: 'Childhood · プライバシーポリシー',
+        desc: 'Childhood アプリのプライバシーポリシー：子どもの成長記録、メディア、バックアップ、権限の取り扱いについて。',
+        h1: 'Childhood · プライバシーポリシー',
+        meta: '運営者：Kang Kai（個人開発者） · 連絡先：<a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · 施行日：2026年10月13日',
+        intro: 'Childhood は、親や保育者が子どもの成長の瞬間、成長測定、イベント、予定を記録するためのアプリです。アプリは、お客様が入力した子どものプロフィール、写真、動画、記録を、現在の端末のアプリ専用ストレージに主に保存します。現在のバージョンではアカウントログインや自動クラウド同期は提供しておらず、これらの記録を当社のサーバーに自動的にアップロードすることもありません。',
+        sections: [
+          { type: 'list', h: 'データの取り扱い', items: [
+            '子どものプロフィール、メディア、記録は端末本体に保存されます。機微でない設定は端末の環境設定に、購入資格は端末に保存されます。アプリのデータベース自体は単独では暗号化されておらず、アプリロックはすべてのデータの単独の暗号化ではありません。',
+            'お客様が写真や動画を選択または撮影したとき、アプリは選択したコンテンツを取得し、アプリのコピーを保存します。Android はシステムのフォトピッカーを使用して、選択したメディアのみにアクセスします。iOS は写真ライブラリの選択機能を使用します。元のフォトライブラリとアプリのコピーは別々に管理されます。',
+            'お客様がエクスポート用のデータパックを作成すると、アプリはお客様が設定したパスワードで暗号化し、システムのファイル保存画面に渡します。当社はバックアップのパスワードを保存したり復元したりしません。クラウドドライブに保存したり他者に送信したりした場合、宛先のサービスはその外部コピーを自らの規則に従って取り扱います。',
+            'お客様がメディアを共有すると、アプリは共有用のコピーを準備し、システムの共有画面に渡します。受信するアプリやサービスがそのコピーを保存する場合があります。アプリ内で記録を削除しても、すでに共有したコンテンツを取り消すことはできません。',
+            'お客様が予定のリマインダーを有効にすると、アプリは端末の通知システムにリマインダーを登録します。システムカレンダーへの書き込みを選択した場合、予定の内容、時間、および含めることを選択した子どもの呼び名がカレンダーに書き込まれます。カレンダーアカウントがこの情報を同期する場合があります。',
+            'お客様が買い切りのロック解除を購入または復元すると、決済は Google Play または Apple App Store が処理します。アプリは商品と取引のステータスを受け取りますが、カード情報は受け取りません。',
+            '現在のバージョンは Firebase Core を初期化しますが、Firebase のクラウドデータベース、クラウドストレージ、分析、クラッシュ収集は有効にしていません。SDK は必要な技術的な端末またはインストール情報を処理する場合があります。当社は最終リリースに基づいてこれを確認し、ストアのデータ安全性の開示を一致させます。'
+          ] },
+          { type: 'text', h: '権限', p: 'カメラとマイクは撮影に使用します。iOS の写真ライブラリ権限はメディアの選択に使用します。Android のシステムフォトピッカーはフォトライブラリ全体の読み取り権限を必要としません。通知はお客様が有効にしたリマインダーに、カレンダーはお客様が書き込みを選択した予定に、端末の生体認証はお客様が有効にしたアプリロックに使用します。アプリは指紋や顔のテンプレートを読み取ったり保存したりしません。各権限は端末の設定で管理できます。' },
+          { type: 'text', h: '保存、削除、セキュリティ', p: 'データは、お客様が該当するコンテンツを削除するかアプリをアンインストールするまで端末に残ります。通常の記録と子どものプロフィールはゴミ箱に入った後、通常30日以内であれば復元でき、それ以前に完全に削除することも可能です。端末のシステムバックアップやお客様が別途保存したデータパックには他のコピーが残る場合があり、アプリ内での削除によって自動的に消えるわけではありません。当社は OS のアプリサンドボックスを使用してファイルを保存し、パスワード付きのデータパックには認証付き暗号化を使用します。端末とデータパックのパスワードは大切に保管してください。' },
+          { type: 'text', h: '子どものデータ', p: '本アプリは親や保育者向けであり、子ども自身が登録して利用することを想定していません。管理権限のある子どもの情報のみを入力し、写真、動画、データパックを共有する前に受取人と共有範囲を確認してください。' },
+          { type: 'text', h: 'お問い合わせと変更', p: 'データの取り扱い、削除、または本ポリシーについてご質問がある場合は、<a href="mailto:' + EMAIL + '">' + EMAIL + '</a> までメールをお送りください。今後、アカウント、クラウド同期、分析、その他データ処理の範囲を変更するサービスを追加する場合、当社は有効化前に本ポリシーとストアの開示を更新します。' }
+        ]
+      },
+      'ko': {
+        html: 'ko',
+        title: 'Childhood · 개인정보 처리방침',
+        desc: 'Childhood 앱 개인정보 처리방침: 아이 성장 기록, 미디어, 백업 및 권한의 처리 방식.',
+        h1: 'Childhood · 개인정보 처리방침',
+        meta: '운영자: Kang Kai(개인 개발자) · 연락처: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · 시행일: 2026년 10월 13일',
+        intro: 'Childhood는 부모와 보호자가 아이의 성장 순간, 성장 측정, 일정 및 이벤트를 기록할 수 있도록 돕습니다. 앱은 입력하신 아이 프로필, 사진, 동영상, 기록을 현재 기기의 앱 전용 저장소에 주로 저장합니다. 현재 버전은 계정 로그인이나 자동 클라우드 동기화를 제공하지 않으며, 이러한 기록을 당사 서버에 자동으로 업로드하지도 않습니다.',
+        sections: [
+          { type: 'list', h: '데이터 처리 방식', items: [
+            '아이 프로필, 미디어, 기록은 기기 본체에 저장됩니다. 민감하지 않은 설정은 기기 환경설정에, 구매 자격은 기기에 저장됩니다. 앱 데이터베이스 자체는 별도로 암호화되지 않으며, 앱 잠금은 모든 데이터에 대한 별도 암호화가 아닙니다.',
+            '사용자가 사진이나 동영상을 직접 선택하거나 촬영하면 앱은 선택한 콘텐츠를 가져와 앱 복사본을 저장합니다. Android는 시스템 사진 선택기를 사용하여 선택한 미디어에만 접근합니다. iOS는 사진 라이브러리 선택 기능을 사용합니다. 원본 사진 라이브러리와 앱 복사본은 별도로 관리됩니다.',
+            '사용자가 내보내기 자료 패키지를 생성하면 앱은 사용자가 설정한 비밀번호로 암호화한 뒤 시스템 파일 저장 화면에 넘깁니다. 당사는 백업 비밀번호를 저장하거나 복구하지 않습니다. 클라우드 드라이브에 저장하거나 타인에게 보낼 경우, 대상 서비스는 해당 외부 복사본을 자체 규칙에 따라 처리합니다.',
+            '사용자가 미디어를 직접 공유하면 앱은 공유용 복사본을 준비하여 시스템 공유 화면에 넘깁니다. 수신 앱이나 서비스가 해당 복사본을 저장할 수 있습니다. 앱 내에서 기록을 삭제해도 이미 공유한 콘텐츠를 취소할 수는 없습니다.',
+            '사용자가 일정 알림을 켜면 앱은 기기 알림 시스템에 알림을 등록합니다. 시스템 캘린더에 기록하기를 선택한 경우, 일정 내용, 시간, 그리고 포함하기로 선택한 아이의 호칭이 캘린더에 기록됩니다. 캘린더 계정이 이 정보를 동기화할 수 있습니다.',
+            '사용자가 일회성 잠금 해제를 구매하거나 복원하면 결제는 Google Play 또는 Apple App Store에서 처리합니다. 앱은 상품 및 거래 상태를 받지만 카드 정보는 받지 않습니다.',
+            '현재 버전은 Firebase Core를 초기화하지만 Firebase 클라우드 데이터베이스, 클라우드 스토리지, 분석, 크래시 수집은 사용하지 않습니다. SDK는 필요한 기술적 기기 또는 설치 정보를 처리할 수 있습니다. 당사는 최종 출시 버전을 기준으로 이를 확인하고 스토어의 데이터 안전 공시를 일치시킵니다.'
+          ] },
+          { type: 'text', h: '권한', p: '카메라와 마이크는 촬영에 사용됩니다. iOS 사진 라이브러리 권한은 미디어 선택에 사용됩니다. Android 시스템 사진 선택기는 사진 라이브러리 전체에 대한 읽기 권한을 요구하지 않습니다. 알림은 사용자가 켠 알림에, 캘린더는 사용자가 기록하기로 선택한 항목에, 기기 생체 인식은 사용자가 켠 앱 잠금에 사용됩니다. 앱은 지문이나 얼굴 템플릿을 읽거나 저장하지 않습니다. 관련 권한은 기기 설정에서 관리할 수 있습니다.' },
+          { type: 'text', h: '보관, 삭제 및 보안', p: '데이터는 사용자가 해당 콘텐츠를 삭제하거나 앱을 제거할 때까지 기기에 남아 있습니다. 일반 기록과 아이 프로필은 휴지통에 들어간 후 보통 30일 이내에 복구할 수 있으며, 그 이전에도 영구 삭제할 수 있습니다. 기기 시스템 백업과 사용자가 별도로 저장한 자료 패키지에는 다른 복사본이 남을 수 있으며, 앱 내 삭제로 인해 자동으로 사라지지 않습니다. 당사는 OS의 앱 샌드박스를 사용하여 파일을 저장하며, 비밀번호가 설정된 자료 패키지는 인증 암호화를 사용합니다. 기기와 자료 패키지의 비밀번호는 안전하게 보관하세요.' },
+          { type: 'text', h: '아이 데이터', p: '본 앱은 부모와 보호자를 위한 것이며, 아이가 직접 가입하거나 사용하는 것을 전제로 하지 않습니다. 관리 권한이 있는 아이 정보만 입력하시고, 사진, 동영상, 자료 패키지를 공유하기 전에 수신자와 공유 범위를 확인하세요.' },
+          { type: 'text', h: '문의 및 변경', p: '데이터 처리, 삭제 또는 본 방침에 대해 질문이 있으면 <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>으로 이메일을 보내주세요. 향후 계정, 클라우드 동기화, 분석 또는 데이터 처리 범위를 변경하는 기타 서비스를 추가할 경우, 당사는 활성화 전에 본 방침과 스토어 공시를 업데이트합니다.' }
+        ]
+      },
+      'id': {
+        html: 'id',
+        title: 'Childhood · Kebijakan Privasi',
+        desc: 'Kebijakan privasi aplikasi Childhood: cara catatan pertumbuhan, media, cadangan, dan izin ditangani.',
+        h1: 'Childhood · Kebijakan Privasi',
+        meta: 'Pengelola: Kang Kai (pengembang individu) · Kontak: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Berlaku: 13 Oktober 2026',
+        intro: 'Childhood membantu orang tua dan pengasuh mencatat momen tumbuh kembang anak, pengukuran pertumbuhan, acara, dan jadwal. Aplikasi terutama menyimpan profil anak, foto, video, dan catatan yang Anda masukkan di penyimpanan privat aplikasi di perangkat Anda saat ini. Versi saat ini tidak menyediakan masuk akun atau sinkronisasi cloud otomatis, dan tidak mengunggah catatan tersebut ke server kami secara otomatis.',
+        sections: [
+          { type: 'list', h: 'Cara data ditangani', items: [
+            'Profil anak, media, dan catatan disimpan secara lokal di perangkat Anda; pengaturan yang tidak sensitif disimpan di preferensi lokal dan hak pembelian disimpan secara lokal. Basis data aplikasi itu sendiri tidak dienkripsi secara terpisah, dan kunci aplikasi bukan enkripsi terpisah untuk semua data.',
+            'Saat Anda secara aktif memilih atau mengambil foto dan video, aplikasi mengambil konten yang dipilih dan menyimpan salinannya. Android menggunakan pemilih foto sistem untuk mengakses hanya media yang Anda pilih; iOS menggunakan pemilih pustaka foto. Pustaka foto asli Anda dan salinan aplikasi dikelola secara terpisah.',
+            'Saat Anda secara aktif membuat paket ekspor, aplikasi mengenkripsinya dengan kata sandi yang Anda tetapkan, lalu menyerahkannya ke antarmuka penyimpanan file sistem. Kami tidak menyimpan atau memulihkan kata sandi cadangan. Jika Anda menyimpannya ke drive cloud atau mengirimkannya ke orang lain, layanan tujuan menangani salinan eksternal sesuai aturannya.',
+            'Saat Anda secara aktif membagikan media, aplikasi menyiapkan salinan bagikan dan menyerahkannya ke antarmuka berbagi sistem. Aplikasi atau layanan penerima dapat menyimpan salinan tersebut; menghapus catatan di aplikasi tidak dapat menarik kembali konten yang sudah Anda bagikan.',
+            'Saat Anda mengaktifkan pengingat jadwal, aplikasi mendaftarkan pengingat ke sistem notifikasi perangkat. Saat Anda memilih menulis ke kalender sistem, konten acara, waktu, dan sapaan anak yang Anda pilih untuk disertakan ditulis ke kalender; akun kalender dapat menyinkronkan informasi ini.',
+            'Saat Anda membeli atau memulihkan pembukaan kunci sekali pakai, pembayaran diproses oleh Google Play atau Apple App Store. Aplikasi menerima status produk dan transaksi, tetapi tidak menerima detail kartu pembayaran.',
+            'Versi saat ini menginisialisasi Firebase Core tetapi tidak mengaktifkan basis data cloud Firebase, penyimpanan cloud, analitik, atau pengumpulan kerusakan. SDK dapat memproses informasi teknis perangkat atau instalasi yang diperlukan; kami menyelaraskan ini dengan rilis akhir dan menjaga pengungkapan keamanan data toko tetap konsisten.'
+          ] },
+          { type: 'text', h: 'Izin', p: 'Kamera dan mikrofon digunakan untuk pengambilan; akses pustaka foto iOS digunakan untuk memilih media; pemilih foto sistem Android tidak memerlukan akses luas ke pustaka. Notifikasi mendukung pengingat yang Anda aktifkan, akses kalender mendukung entri yang Anda pilih untuk ditambahkan, dan biometrik perangkat mendukung kunci aplikasi opsional. Kami tidak membaca atau menyimpan templat sidik jari atau wajah. Anda dapat mengelola izin ini di pengaturan perangkat.' },
+          { type: 'text', h: 'Penyimpanan, penghapusan, dan keamanan', p: 'Catatan tetap di perangkat Anda hingga Anda menghapusnya atau mencabut pemasangan aplikasi. Catatan biasa dan profil anak biasanya dapat dipulihkan dalam 30 hari setelah masuk ke tempat sampah, dan juga dapat dihapus permanen lebih awal. Cadangan sistem perangkat dan paket ekspor yang Anda simpan terpisah dapat menyimpan salinan lain dan tidak hilang secara otomatis karena penghapusan di aplikasi. Kami menggunakan sandbox aplikasi sistem operasi untuk menyimpan file; paket yang dilindungi kata sandi menggunakan enkripsi terautentikasi. Harap simpan kata sandi perangkat dan paket Anda dengan aman.' },
+          { type: 'text', h: 'Data anak', p: 'Aplikasi ini ditujukan untuk orang tua dan pengasuh, bukan untuk anak yang mendaftar atau menggunakannya sendiri. Hanya tambahkan informasi anak yang berwenang Anda kelola, dan konfirmasi penerima serta cakupan sebelum membagikan foto, video, atau paket.' },
+          { type: 'text', h: 'Kontak dan perubahan', p: 'Jika Anda memiliki pertanyaan tentang penanganan data, penghapusan, atau kebijakan ini, kirimkan email ke <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Jika di masa depan kami menambahkan akun, sinkronisasi cloud, analitik, atau layanan lain yang mengubah cakupan penanganan data, kami akan memperbarui kebijakan ini dan pengungkapan toko sebelum mengaktifkannya.' }
+        ]
+      },
+      'de': {
+        html: 'de',
+        title: 'Childhood · Datenschutzerklärung',
+        desc: 'Datenschutzerklärung der Childhood-App: wie Wachstumsaufzeichnungen, Medien, Backups und Berechtigungen behandelt werden.',
+        h1: 'Childhood · Datenschutzerklärung',
+        meta: 'Betreiber: Kang Kai (Einzelentwickler) · Kontakt: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> · Inkrafttreten: 13. Oktober 2026',
+        intro: 'Childhood hilft Eltern und Betreuenden, Wachstumsmomente, Wachstumsmaße, Ereignisse und Zeitpläne von Kindern festzuhalten. Die App speichert in erster Linie die von Ihnen eingegebenen Kinderprofile, Fotos, Videos und Aufzeichnungen im privaten App-Speicher auf Ihrem aktuellen Gerät. Die aktuelle Version bietet keinen Kontologin oder automatische Cloud-Synchronisierung und lädt diese Aufzeichnungen nicht automatisch auf unsere Server hoch.',
+        sections: [
+          { type: 'list', h: 'Wie Daten verarbeitet werden', items: [
+            'Kinderprofile, Medien und Aufzeichnungen werden lokal auf Ihrem Gerät gespeichert; nicht sensible Einstellungen werden in den lokalen Voreinstellungen und Kaufberechtigungen lokal gehalten. Die App-Datenbank selbst ist nicht separat verschlüsselt, und die App-Sperre ist keine separate Verschlüsselung aller Daten.',
+            'Wenn Sie aktiv Fotos und Videos auswählen oder aufnehmen, ruft die App den ausgewählten Inhalt ab und speichert eine eigene Kopie. Android verwendet den System-Fotoauswähler, um nur auf die ausgewählten Medien zuzugreifen; iOS verwendet die Foto-Bibliotheksauswahl. Ihre ursprüngliche Foto-Bibliothek und die App-Kopien werden getrennt verwaltet.',
+            'Wenn Sie aktiv ein Export-Paket erstellen, verschlüsselt die App es mit dem von Ihnen festgelegten Passwort und übergibt es dann der Systemdatei-Speicherschnittstelle. Wir speichern oder stellen das Backup-Passwort nicht wieder her. Wenn Sie es in einem Cloud-Laufwerk speichern oder an andere senden, behandelt der Zieldienst die externe Kopie nach seinen Regeln.',
+            'Wenn Sie aktiv Medien teilen, bereitet die App eine Freigabe-Kopie vor und übergibt sie der System-Freigabeschnittstelle. Die empfangende App oder der Dienst kann diese Kopie speichern; das Löschen eines Datensatzes in der App kann bereits geteilte Inhalte nicht zurücknehmen.',
+            'Wenn Sie Zeitplan-Erinnerungen aktivieren, registriert die App die Erinnerung beim Benachrichtigungssystem des Geräts. Wenn Sie das Schreiben in den Systemkalender wählen, werden Inhalt, Zeit und die von Ihnen einzuschließende Anrede des Kindes in den Kalender geschrieben; das Kalenderkonto kann diese Informationen synchronisieren.',
+            'Wenn Sie einen einmaligen Kauf entsperren oder wiederherstellen, wird die Zahlung von Google Play oder dem Apple App Store verarbeitet. Die App erhält Produkt- und Transaktionsstatus, aber keine Kartendaten.',
+            'Die aktuelle Version initialisiert Firebase Core, aktiviert aber keine Firebase-Cloud-Datenbank, keinen Cloud-Speicher, keine Analyse und keine Absturzsammlung. Das SDK kann notwendige technische Geräte- oder Installationsinformationen verarbeiten; wir gleichen dies mit der finalen Version ab und halten die Datenschutzhinweise im Store konsistent.'
+          ] },
+          { type: 'text', h: 'Berechtigungen', p: 'Kamera und Mikrofon dienen der Aufnahme; der Zugriff auf die iOS-Fotobibliothek dient der Medienauswahl; der System-Fotoauswähler von Android erfordert keinen umfassenden Bibliothekszugriff. Benachrichtigungen unterstützen von Ihnen aktivierte Erinnerungen, Kalenderzugriff unterstützt Einträge, die Sie hinzuzufügen wählen, und die Geräte-Biometrie unterstützt die optionale App-Sperre. Wir lesen oder speichern keine Fingerabdruck- oder Gesichtsvorlagen. Diese Berechtigungen können in den Geräteeinstellungen verwaltet werden.' },
+          { type: 'text', h: 'Speicherung, Löschung und Sicherheit', p: 'Aufzeichnungen verbleiben auf Ihrem Gerät, bis Sie sie löschen oder die App deinstallieren. Normale Aufzeichnungen und Kinderprofile können nach dem Verschieben in den Papierkorb in der Regel innerhalb von 30 Tagen wiederhergestellt werden und können auch früher endgültig gelöscht werden. Gerätesystem-Backups und die separat gespeicherten Export-Pakete können andere Kopien enthalten und verschwinden nicht automatisch durch eine Löschung in der App. Wir verwenden den App-Sandbox des Betriebssystems zum Speichern von Dateien; passwortgeschützte Pakete verwenden authentifizierte Verschlüsselung. Bitte bewahren Sie die Passwörter Ihres Geräts und Ihrer Pakete sicher auf.' },
+          { type: 'text', h: 'Kinderdaten', p: 'Diese App richtet sich an Eltern und Betreuende, nicht an Kinder, die sich selbst registrieren oder sie nutzen. Fügen Sie nur Kinderinformationen hinzu, die Sie zu verwalten berechtigt sind, und bestätigen Sie Empfänger und Umfang, bevor Sie Fotos, Videos oder Pakete teilen.' },
+          { type: 'text', h: 'Kontakt und Änderungen', p: 'Wenn Sie Fragen zur Datenverarbeitung, Löschung oder dieser Richtlinie haben, senden Sie bitte eine E-Mail an <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Falls wir künftig Konten, Cloud-Synchronisierung, Analyse oder andere Dienste hinzufügen, die den Umfang der Datenverarbeitung ändern, werden wir diese Richtlinie und die Store-Hinweise vor deren Aktivierung aktualisieren.' }
+        ]
+      }
+    };
+
+    const LABELS = {
+      'zh-CN': '语言', 'zh-TW': '語言', 'en': 'Language', 'es': 'Idioma',
+      'fr': 'Langue', 'pt': 'Idioma', 'ru': 'Язык', 'ja': '言語',
+      'ko': '언어', 'id': 'Bahasa', 'de': 'Sprache'
+    };
+
+    const sel = document.getElementById('langSelect');
+    for (const [code, name] of LANGS) {
+      const opt = document.createElement('option');
+      opt.value = code;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    }
+
+    function render(code) {
+      const d = T[code] || T['zh-CN'];
+      document.documentElement.lang = d.html;
+      document.title = d.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', d.desc);
+      document.getElementById('title').innerHTML = d.h1;
+      document.getElementById('meta').innerHTML = d.meta;
+      document.getElementById('langLabel').textContent = LABELS[code] || 'Language';
+      document.getElementById('footer').innerHTML = '© 2026 小时候 · Childhood';
+
+      let html = '<p>' + d.intro + '</p>';
+      for (const s of d.sections) {
+        if (s.type === 'list') {
+          html += '<h2>' + s.h + '</h2><ul>';
+          for (const it of s.items) html += '<li>' + it + '</li>';
+          html += '</ul>';
+        } else {
+          html += '<h2>' + s.h + '</h2><p>' + s.p + '</p>';
+        }
+      }
+      document.getElementById('content').innerHTML = html;
+    }
+
+    function setLang(code, updateUrl) {
+      if (!T[code]) code = 'zh-CN';
+      sel.value = code;
+      render(code);
+      if (updateUrl) {
+        if (code === 'zh-CN') {
+          history.replaceState(null, '', location.pathname + location.hash);
+        } else {
+          history.replaceState(null, '', '?lang=' + code);
+        }
+      }
+    }
+
+    sel.addEventListener('change', () => setLang(sel.value, true));
+
+    const params = new URLSearchParams(location.search);
+    const initial = params.get('lang');
+    setLang(initial, false);
+  </script>
 </body>
 </html>
